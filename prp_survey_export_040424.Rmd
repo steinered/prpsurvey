@@ -1,0 +1,25 @@
+---
+title: "PRP Survey Export"
+author: "erika steiner"
+date: "2024-04-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(httr)
+library(jsonlite)
+```
+
+```{r API setup, include=FALSE}
+#API token setup requires saving your API token using "Sys.setenv("QUALTRICS_API_TOKEN" = "[insert your API token]")"
+#API token is in your Qualtrics Account Settings
+
+api_token <- Sys.getenv("QUALTRICS_API_TOKEN")
+
+#the base url is "https://[yourdatacenterid].qualtrics.com/API"
+#data center ID can be found in your Qualtrics Account Settings under the Qualtrics IDs tab
+
+base_url <- "https://iad1.qualtrics.com/API"
+```
+
